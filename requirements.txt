@@ -1,0 +1,15 @@
+plotly==5.21.0
+numpy==1.25.0
+pandas==1.4.3
+dash==2.17
+dash-bootstrap-components
+dash-core-components
+dash-extensions
+dash-html-components
+dash-table
+flask-login
+flask
+flask-caching
+flask-compress
+dash-uploader==0.7.0a1
+packaging==21.0.0

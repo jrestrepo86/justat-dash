@@ -15,6 +15,7 @@ start_date = data["año_mes"].min()
 final_date = data["año_mes"].max()
 dropdown_options = list(set(data["circunscripción"]))
 numdate = {num: date for num, date in enumerate(data["año_mes"].unique())}
+data_size = data.shape[0]
 
 
 def Header():
@@ -51,10 +52,45 @@ app.layout = dbc.Container(
                 dbc.Placeholder(
                     color="primary", size="xs", className="me-1 mt-1 w-100"
                 ),
-                html.H5(f"Periodo: {start_date} -- {final_date}"),
-                tabla(data),
-                dbc.Placeholder(
-                    color="primary", size="xs", className="me-1 mt-1 w-100"
+                dbc.Card(
+                    [
+                        dbc.CardHeader(
+                            html.H4("Fuero Civil - Primera Inst. Civ. y Com.")
+                        ),
+                        dbc.CardBody(
+                            [
+                                dbc.Row(
+                                    [
+                                        dbc.Col(
+                                            [
+                                                html.H5(
+                                                    "Resoluciones",
+                                                    className="mb-2",
+                                                ),
+                                                html.H6(
+                                                    f"Periodo: {start_date} -- {final_date}",
+                                                    className="m-0",
+                                                ),
+                                            ],
+                                            width=10,
+                                        ),
+                                        dbc.Col(
+                                            dbc.Badge(
+                                                f"{data_size} registros",
+                                                color="primary",
+                                                class_name="m-1",
+                                            ),
+                                            width=1,
+                                        ),
+                                    ],
+                                    align="end",
+                                    justify="between",
+                                ),
+                                tabla(data),
+                            ],
+                            className="position-relative",
+                        ),
+                    ]
                 ),
                 dbc.Row(
                     [

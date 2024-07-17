@@ -39,7 +39,7 @@ def barrasCausas(data):
                 "a termino": True,
                 "porcentaje": ":.2f",
             },
-            labels={"porcentaje": "% resueltas / a termino"},
+            labels={"porcentaje": "% a termino / resueltas"},
             height=500,
         )
         fig.update_xaxes(tickangle=45)
@@ -73,10 +73,12 @@ def pieAutosSentencias(data):
                 hover_name="organismo",
                 hover_data={
                     "organismo": False,
-                    "causas resueltas": True,
+                    "año_mes": True,
                     "autos": True,
                     "sentencias": True,
+                    "causas resueltas": True,
                 },
+                labels={"año_mes": "periodo"},
             )
             fig.update_layout(
                 title={

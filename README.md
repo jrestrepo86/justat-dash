@@ -10,6 +10,10 @@
 
 Implementación en Plotly-Dash de una vista del tablero JUSTAT incorporando información gráfica.
 
+
+https://github.com/user-attachments/assets/25ba2d29-7c15-44e6-9292-ad46bb913959
+
+
 ## Instalación
 
 ```bash

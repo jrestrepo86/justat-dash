@@ -1,14 +1,27 @@
+"""
+  Tablero JUSTAT
+
+    Modulos:
+    * app.py: Aplicación.
+    * graficos.py: Layout y callbacks para los gráficos.
+    * selectores.py: Componentes de selcción de datos.
+
+Juan Felipe Restrepo <juan.restrepo@under.edu.ar
+2024-07-18
+"""
+
 import dash
 import dash_bootstrap_components as dbc
 from dash import html
 import pandas as pd
 
 from selectores import dropDownCircuns, dateSlider
-from graficos import barrasCausas, pieAutosSentencias
+from graficos import barrasCausas, scatterAutosSentencias
 from tabla import tabla
 
 DATAFILE = "./data/APGyECausasResueltas01.csv"
 
+# Cargar datos
 data = pd.read_csv(DATAFILE, index_col=0)
 data["año_mes"] = pd.to_datetime(data["año_mes"]).dt.strftime("%Y-%m")
 start_date = data["año_mes"].min()
@@ -131,7 +144,7 @@ app.layout = dbc.Container(
                                                     [
                                                         html.H6("Circunscripción:"),
                                                         dropDownCircuns(data),
-                                                        pieAutosSentencias(data),
+                                                        scatterAutosSentencias(data),
                                                     ],
                                                     gap=3,
                                                 )
@@ -155,4 +168,3 @@ app.layout = dbc.Container(
 
 if __name__ == "__main__":
     app.run_server(debug=True)
-    pass

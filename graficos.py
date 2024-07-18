@@ -51,11 +51,11 @@ def barrasCausas(data):
     return layout
 
 
-def pieAutosSentencias(data):
-    layout = html.Div(dcc.Graph(id="pie-chart-autos-sent", figure={}))
+def scatterAutosSentencias(data):
+    layout = html.Div(dcc.Graph(id="scatter-chart-autos-sent", figure={}))
 
     @callback(
-        Output("pie-chart-autos-sent", "figure"),
+        Output("scatter-chart-autos-sent", "figure"),
         Input("dropdown-circuns", "value"),
     )
     def sunburst_plot(circuns):

@@ -27,7 +27,7 @@ python3 app.py
 
 ```bash
 git clone https://github.com/jrestrepo86/justat-dash.git
-cd justat-dash/app
+cd justat-dash
 docker build -t justat .
 docker run -p 8050:8050 -v "$(pwd)"/app:/app justat
 ```

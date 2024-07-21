@@ -12,13 +12,22 @@ Implementación en Plotly-Dash de una vista del tablero JUSTAT incorporando info
 
 <https://github.com/user-attachments/assets/25ba2d29-7c15-44e6-9292-ad46bb913959>
 
-## Instalación
+## Instalación (virtual env)
 
 ```bash
 git clone https://github.com/jrestrepo86/justat-dash.git
-cd justat-dash
+cd justat-dash/app
 python -m venv env
 source env/bin/activate
 pip install -r requirements.txt
-python app.py
+python3 app.py
+```
+
+## Instalación (docker)
+
+```bash
+git clone https://github.com/jrestrepo86/justat-dash.git
+cd justat-dash/app
+docker build -t justat .
+docker run -p 8050:8050 -v "$(pwd)"/app:/app justat
 ```

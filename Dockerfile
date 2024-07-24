@@ -7,8 +7,6 @@ COPY ./app /app
 WORKDIR /app
 
 RUN set -ex && \
-  pip install -r requirements.txt
-
-EXPOSE 8050
+    pip install -r requirements.txt
 
 CMD ["python3", "app.py"]

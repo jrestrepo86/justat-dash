@@ -1,0 +1,10 @@
+
+name: dash-justat
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8050:8050
